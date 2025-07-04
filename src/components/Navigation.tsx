@@ -51,15 +51,15 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? "bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-card" 
+        ? "bg-background/70 backdrop-blur-glass border-b border-primary/20 shadow-neon" 
         : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+          <div className="text-xl font-bold text-gradient glow-effect animate-pulse-glow">
             &lt;Developer /&gt;
           </div>
 
@@ -71,10 +71,10 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-all duration-300 ${
+                className={`transition-all duration-500 hover:scale-105 ${
                   activeSection === item.id
-                    ? "bg-primary/10 text-primary border border-primary/20"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                    ? "bg-gradient-primary text-primary-foreground shadow-glow border-gradient"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/10 hover:shadow-glow-accent backdrop-blur-glass"
                 }`}
               >
                 {item.label}
@@ -86,7 +86,7 @@ const Navigation = () => {
           <Button 
             variant="default" 
             size="sm" 
-            className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+            className="bg-gradient-neon hover:shadow-neon transition-all duration-500 hover:scale-105 glow-effect animate-pulse-glow"
             onClick={() => scrollToSection("contact")}
           >
             Hire Me
